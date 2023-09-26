@@ -3,7 +3,8 @@ const { default: mongoose } = require("mongoose")
 const dbConnecct = () => {
     try {
         const conn = mongoose.connect('')
+        console.log("Databse connected");
     } catch (error) {
-        throw new Err
+        console.log("Databse error");
     }
 }
