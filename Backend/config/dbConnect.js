@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose")
 
-const dbConnecct = () => {
+const dbConnect = () => {
     try {
         const conn = mongoose.connect('')
         console.log("Databse connected successfully");
@@ -9,4 +9,4 @@ const dbConnecct = () => {
     }
 }
 
-module.exports= dbConnecct;
+module.exports = dbConnect;
