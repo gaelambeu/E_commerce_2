@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-const CustomButton = () => {
+const CustomButton = ({title, containerStyles, handleClick}) => {
   return (
     <button
         disabled={false}
@@ -10,7 +10,7 @@ const CustomButton = () => {
         className={`custom-btn`}
         onClick={() => {}}
     >
-        <span className={'flex-1'}>
+        <span className={`flex-1`}>
             title
         </span>
     </button>
