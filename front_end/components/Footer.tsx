@@ -27,6 +27,12 @@ const Footer = () => {
               </div>
             ))}
          </div>
+         <div className="flex justify-between items-center flex-wrap mt-10 border-t border-green-100 sm:px-16 px-6 py-10">
+           <div className="footer__copyrights-links">
+              <Link href="/" >
+              </Link>
+           </div>
+         </div>
       </div>
     </footer>
   )
