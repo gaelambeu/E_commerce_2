@@ -5,10 +5,21 @@ import Image from 'next/image'
 import { Combobox, Transition } from '@headlessui/react'
 import { SearchManufacturerProps } from '@/types'
 import { useState, Fragment } from 'react'
+import { manufacturers } from '@/constants'
 
 const SearchManufacturer = ({manufacturer, setManufacturer} : SearchManufacturerProps) => {
 
     const [query, setQuery] = useState('')
+
+    const filteredManufacturers = 
+        query === "" 
+        ? manufacturers 
+        : manufacturers.filter((item) => (
+            item.toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(query.toLocaleLowerCase().replace(/\s+/g,""))
+    ))
+
   return (
     <div className="search-manufacturer">
         <Combobox>
@@ -31,7 +42,9 @@ const SearchManufacturer = ({manufacturer, setManufacturer} : SearchManufacturer
                     leaveTo="opacity-0" 
                     afterLeave={() => setQuery('')} 
                 >
+                    <Combobox.Options>
 
+                    </Combobox.Options>
                 </Transition>
             </div>
         </Combobox>
